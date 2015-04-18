@@ -1,4 +1,17 @@
 <?php
+	/* Menu */
+	$leftMenu = array(
+		array('link' => 'Домой', 'href' => 'index.php'),
+		array('link' => 'О нас', 'href' => 'about.php'),
+		array('link' => 'Контакты', 'href' => 'contact.php'),
+		array('link' => 'Таблица умножения', 'href' => 'table.php'),
+		array('link' => 'Калькулятор', 'href' => 'calc.php')
+	);
+	/**** Menu */
+	
+	$hour = (int)strftime('%H');
+	
+	
 
 ?>
 
@@ -42,21 +55,15 @@
 			<!-- Навигация -->
 			<h2>Навигация по сайту</h2>
 			<!-- Меню -->
-			<?php
-				$leftMenu = array(
-					'home'=>'index.php',
-					'about'=>'about.php',
-					'contact'=>'contact.php',
-					'table'=>'table.php',
-					'calc'=>'calc.php');
+			<?
+			echo "<ul>";
+			foreach($leftMenu as $item){
+				echo "<li>";
+				echo "<a href='{$item['href']}'>{$item['link']}</a>";
+				echo "</li>";
+			}
+			echo "</ul>";
 			?>
-			<ul>
-				<li><a href='<?= $leftMenu['home']?>'>Домой</a></li>
-				<li><a href='<?= $leftMenu['about']?>'>О нас</a></li>
-				<li><a href='<?= $leftMenu['contact']?>'>Контакты</a></li>
-				<li><a href='<?= $leftMenu['table']?>'>Таблица умножения</a></li>
-				<li><a href='<?= $leftMenu['calc']?>'>Калькулятор</a></li>
-			</ul>
 			<!-- Меню -->
 			<!-- Навигация -->
 		</div>
