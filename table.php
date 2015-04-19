@@ -1,6 +1,19 @@
 <?php
-	$rows = 10;
-	$cols = 10;
+	function TablePrint($rows,$cols,$color='brown'){
+	echo "<table border='1' width='300'>";
+			for($tr = 1;$tr <= $rows; $tr++){
+				echo '<tr>';
+				
+				for($td = 1;$td <= $cols; $td++){
+					if ($tr==1 | $td==1)
+						echo "<th style='background:$color' align = 'center'>".$tr*$td.'</th>';
+					else
+						echo '<td>'.$tr*$td.'</td>';
+				}
+				echo '</tr>';
+			}
+			echo '</table>';
+	}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
@@ -36,19 +49,12 @@
 			<!-- Таблица -->
 			
 			<?php
-			echo "<table border='1' width='300'>";
-			for($tr = 1;$tr <= $rows; $tr++){
-				echo '<tr>';
-				
-				for($td = 1;$td <= $cols; $td++){
-					if ($tr==1 | $td==1)
-						echo "<th style='background:brown' align = 'center'>".$tr*$td.'</th>';
-					else
-						echo '<td>'.$tr*$td.'</td>';
-				}
-				echo '</tr>';
-			}
-			echo '</table>';
+			//table_print
+			TablePrint(10,10);
+			
+			echo "$rows";
+			var_dump($rows);
+			
 			?>
 			
 			<!-- Таблица -->
