@@ -52,9 +52,6 @@
 			//table_print
 			TablePrint(10,10);
 			
-			echo "$rows";
-			var_dump($rows);
-			
 			?>
 			
 			<!-- Таблица -->
