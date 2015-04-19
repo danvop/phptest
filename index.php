@@ -1,5 +1,19 @@
 <?php
-	/* Menu */
+	function drawMenu($menu, $vertical = true){
+			$style = '';
+			if(!$vertical){
+				$style = " style='display:inline;margin-right:15px'";
+			}
+			echo "<ul>";
+			foreach($menu as $item){
+				echo "<li$style>";
+				echo "<a href='{$item['href']}'>{$item['link']}</a>";
+				echo "</li>";
+			}
+			echo "</ul>";
+	}
+	
+	/* Menu ***/
 	$leftMenu = array(
 		array('link' => 'Домой', 'href' => 'index.php'),
 		array('link' => 'О нас', 'href' => 'about.php'),
@@ -63,19 +77,17 @@
 			<h2>Навигация по сайту</h2>
 			<!-- Меню -->
 			<?
-			echo "<ul>";
-			foreach($leftMenu as $item){
-				echo "<li>";
-				echo "<a href='{$item['href']}'>{$item['link']}</a>";
-				echo "</li>";
-			}
-			echo "</ul>";
+				drawMenu($leftMenu);
 			?>
 			<!-- Меню -->
 			<!-- Навигация -->
 		</div>
 		<div id="footer">
 			<!-- Нижняя часть страницы -->
+			<?
+				drawMenu($leftMenu, false);
+			?>
+			<hr>
 			&copy; Супер Мега Веб-мастер, 2000 - <?= $year ?>
 			<!-- Нижняя часть страницы -->
 		</div>
