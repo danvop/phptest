@@ -48,12 +48,9 @@
 		</div>
 		<div id="nav">
 			<!-- Навигация -->
-			<h2>Навигация по сайту</h2>
-			<!-- Меню -->
 			<?
-				drawMenu($leftMenu);
+				include 'menu.inc.php';
 			?>
-			<!-- Меню -->
 			<!-- Навигация -->
 		</div>
 		<div id="footer">

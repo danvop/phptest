@@ -1,5 +1,6 @@
 <?
-	drawMenu($leftMenu, false);
+	if(!drawMenu($leftMenu, false))
+					echo 'Извините, меню малость поломалось';
 ?>
 <hr>
 &copy; Супер Мега Веб-мастер, 2000 - <?= $year ?>
