@@ -1,5 +1,6 @@
 <?php
-	
+define('ERR_DRAW_ON_LEFT_MENU','sorry....menu doesn\'t work');
+define('ERR_DRAW_ON_BOTTOM_MENU','sorry....menu doesn\'t work');
 	/* Menu ***/
 	$leftMenu = array(
 		array('link' => 'Домой', 'href' => 'index.php'),

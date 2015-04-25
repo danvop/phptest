@@ -1,6 +1,6 @@
 <?
 	if(!drawMenu($leftMenu, false))
-					echo 'Извините, меню малость поломалось';
+					echo ERR_DRAW_ON_BOTTOM_MENU;
 ?>
 <hr>
 &copy; Супер Мега Веб-мастер, 2000 - <?= $year ?>

@@ -2,6 +2,6 @@
 			<!-- Меню -->
 			<?
 				if(!drawMenu($leftMenu))
-					echo 'Извините, меню малость поломалось';
+					echo ERR_DRAW_ON_LEFT_MENU;
 			?>
 			<!-- Меню -->
