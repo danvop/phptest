@@ -1,34 +1,7 @@
 <?php
-	function drawMenu($menu, $vertical = true){
-			$style = '';
-			if(!$vertical){
-				$style = " style='display:inline;margin-right:15px'";
-			}
-			echo "<ul>";
-			foreach($menu as $item){
-				echo "<li$style>";
-				echo "<a href='{$item['href']}'>{$item['link']}</a>";
-				echo "</li>";
-			}
-			echo "</ul>";
-	}
-	
-	/* Menu ***/
-	$leftMenu = array(
-		array('link' => 'Домой', 'href' => 'index.php'),
-		array('link' => 'О нас', 'href' => 'about.php'),
-		array('link' => 'Контакты', 'href' => 'contact.php'),
-		array('link' => 'Таблица умножения', 'href' => 'table.php'),
-		array('link' => 'Калькулятор', 'href' => 'calc.php')
-	);
-	/**** Menu */
-	
-	$hour = (int)strftime('%H');
-	setlocale(LC_ALL, "russian");
-	$day = strftime('%d');
-	$mon = strftime('%B');
-	$year = strftime('%Y');
-	
+	require 'lib.inc.php';
+	require 'data.inc.php';
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -43,8 +16,9 @@
 
 		<div id="header">
 			<!-- Верхняя часть страницы -->
-			<img src="logo.gif" width="187" height="29" alt="Наш логотип" class="logo" />
-			<span class="slogan">приходите к нам учиться</span>
+			<?
+				include 'top.inc.php';
+			?>
 			<!-- Верхняя часть страницы -->
 		</div>
 
@@ -74,21 +48,16 @@
 		</div>
 		<div id="nav">
 			<!-- Навигация -->
-			<h2>Навигация по сайту</h2>
-			<!-- Меню -->
 			<?
-				drawMenu($leftMenu);
+				include 'menu.inc.php';
 			?>
-			<!-- Меню -->
 			<!-- Навигация -->
 		</div>
 		<div id="footer">
 			<!-- Нижняя часть страницы -->
 			<?
-				drawMenu($leftMenu, false);
+				include 'bottom.inc.php';
 			?>
-			<hr>
-			&copy; Супер Мега Веб-мастер, 2000 - <?= $year ?>
 			<!-- Нижняя часть страницы -->
 		</div>
 	</body>
