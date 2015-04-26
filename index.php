@@ -3,7 +3,7 @@
 	require 'data.inc.php';
 $title = 'Сайт нашей школы';
 $header = "$welcome, Гость";
-$id = strtolower(trim(strip_tags($_GET['id'])));
+$id = strtolower(cleanStr($_GET['id']));
 switch($id){
 	case 'about':
 		$title = 'О сайте';

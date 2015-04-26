@@ -2,7 +2,7 @@
 if($_SERVER['REQUEST_METHOD']=='POST'){
 	$cols = abs((int)$_POST['cols']);
 	$rows = abs((int)$_POST['rows']);
-	$color = trim(strip_tags($_POST['color']));
+	$color = cleanStr($_POST['color']);
 }
 $cols = ($cols) ? $cols : 10;
 $rows = ($rows) ? $rows : 10;

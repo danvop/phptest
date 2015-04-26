@@ -3,7 +3,7 @@ $output = '';
 if($_SERVER['REQUEST_METHOD']=='POST'){
 	$n1 = (int)$_POST['num1'];
 	$n2 = (int)$_POST['num2'];
-	$op = strip_tags($_POST['operator']);
+	$op = cleanStr($_POST['operator']);
 	
 	$output = "$n1 $op $n2 = ";
 	switch($op){

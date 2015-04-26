@@ -1,4 +1,8 @@
 <?php
+function cleanStr($data){
+	return trim(strip_tags($data));
+}
+
 function drawMenu($menu, $vertical = true){
 			if(!is_array($menu))
 				return false;
